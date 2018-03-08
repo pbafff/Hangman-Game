@@ -10,6 +10,8 @@
 </head>
 <body>
     
+    <div id="map"></div>
+
     <input type="text" size="40" onkeydown="playerGuess(event)">
        
         <p id="demo"></p>
@@ -22,6 +24,9 @@
     
     
     <script src="./assets/javascript/game.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdik-Ja5OJBVbLDLgeHUldmCEgIbq1dps&callback=initMap">
+    </script>
 
 </body>
 </html>
