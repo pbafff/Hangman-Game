@@ -1,4 +1,16 @@
-var words = ["nauru", "kyrgystan", "brunei", "kiribati", "djibouti", "malta", "vanuatu", "liechtenstein", "macedonia"];
+var words = ["nauru", "kyrgyzstan", "brunei", "kiribati", "djibouti", "malta", "vanuatu", "liechtenstein", "macedonia"];
+
+var wordsAndLatLng = {
+    nauru: {lat: -0.5284144, lng: 166.9342384},
+    kyrgyzstan : {lat: 41.20438, lng:74.76610},
+    brunei: {lat: 4.53528, lng: 114.72767},
+    kiribati: {lat: 1.826555, lng:-157.346610},
+    djibouti: {lat: 11.82514, lng: 42.59028},
+    malta: {lat: 35.93750, lng: 14.37542},
+    vanuatu: {lat: -15.37671, lng: 166.95916},
+    liechtenstein: {lat: 47.16600, lng: 9.55537},
+    macedonia: {lat: 41.60864, lng: 21.74527}
+}
 
 var randWord = words[Math.floor(Math.random() * words.length)];
 console.log(randWord);
@@ -49,6 +61,10 @@ document.onkeypress = function playerGuess(event) {
             hiddenWord = hiddenWordUpdated;
             if (hiddenWord === randWord) {
                 //change map location to hiddenWord
+                
+                map.panTo(wordsAndLatLng[hiddenWord]); //Make map global;
+                map.setZoom(5);
+                
                 var j = words.indexOf(hiddenWord);
                 words.splice(j, 1);
                 console.log(words);
@@ -92,14 +108,15 @@ document.onkeypress = function playerGuess(event) {
 
 }
 
+var map;
 function initMap() {
-    var uluru = { lat: -25.363, lng: 131.044 };
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
-        center: uluru
+    var hccc = { lat: 40.730743, lng: -74.065945 };
+    map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 18,
+        center: hccc
     });
     var marker = new google.maps.Marker({
-        position: uluru,
+        position: hccc,
         map: map
     });
 }
