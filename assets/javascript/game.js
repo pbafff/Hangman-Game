@@ -108,12 +108,24 @@ document.onkeypress = function playerGuess(event) {
 
 }
 
+var myStyles =[
+    {
+        featureType: "poi",
+        elementType: "labels",
+        stylers: [
+              { visibility: "off" }
+        ]
+    }
+];
+
 var map;
 function initMap() {
     var hccc = { lat: 40.730743, lng: -74.065945 };
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 18,
-        center: hccc
+        center: hccc,
+        gestureHandling: 'cooperative',
+        styles: myStyles 
     });
     var marker = new google.maps.Marker({
         position: hccc,
