@@ -23,6 +23,8 @@ body {
     grid-auto-rows: 90px;
     font-family: 'Inconsolata', monospace;
     color: #777777;
+    transition: 1s;
+    transition-timing-function: ease-in;
 }
 
 #map {
@@ -49,27 +51,49 @@ body {
     z-index: 2;
 }
 
+#mini-grid1 {
+    grid-column: 11 /13;
+    grid-row: 3 /4;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
 #wg {
-    grid-column: 11 / 12;
-    grid-row: 3 / 4;
+    grid-column: 1 / auto;
+    grid-row: 1 / 2;
     z-index: 2;
 }
 
 #wrongGuesses {
-    grid-column: 12 / 13;
-    grid-row: 3 / 4;
+    display: flex;
+    margin-top: auto;
+    grid-column: 2 / auto;
+    grid-row: 1 / 2;
     z-index: 2;
 }
 
-#gr {
-    grid-column: 11 / 12;
+#mini-grid2 {
+    grid-column: 11 / 13;
     grid-row: 4 / 5;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+#gr {
+    grid-column: 1 / auto;
+    grid-row: 1 / 2;
     z-index: 2;
 }
 
 #remainingGuesses {
-    grid-column: 12 / 13;
-    grid-row: 4 / 5;
+    display: flex;
+    margin-top: auto;
+    grid-column: 2 / auto;
+    grid-row: 1 / 2;
     z-index: 2;
 }
 

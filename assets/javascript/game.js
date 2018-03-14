@@ -1,15 +1,42 @@
 var words = ["nauru", "kyrgyzstan", "brunei", "kiribati", "djibouti", "malta", "vanuatu", "liechtenstein", "macedonia"];
 
 var wordsAndLatLng = {
-    nauru: {lat: -0.5284144, lng: 166.9342384},
-    kyrgyzstan : {lat: 41.20438, lng:74.76610},
-    brunei: {lat: 4.53528, lng: 114.72767},
-    kiribati: {lat: 1.826555, lng:-157.346610},
-    djibouti: {lat: 11.82514, lng: 42.59028},
-    malta: {lat: 35.93750, lng: 14.37542},
-    vanuatu: {lat: -15.37671, lng: 166.95916},
-    liechtenstein: {lat: 47.16600, lng: 9.55537},
-    macedonia: {lat: 41.60864, lng: 21.74527}
+    nauru: {
+        latLng: { lat: -0.5284144, lng: 166.9342384 },
+        zoom: 7
+    },
+    kyrgyzstan: {
+        latLng: { lat: 41.20438, lng: 74.76610 },
+        zoom: 5
+    },
+    brunei: {
+        latLng: { lat: 4.53528, lng: 114.72767 },
+        zoom: 5
+    },
+    kiribati: {
+        latLng: { lat: 1.826555, lng: -157.346610 },
+        zoom: 6
+    },
+    djibouti: {
+        latLng: { lat: 11.82514, lng: 42.59028 },
+        zoom: 5
+    },
+    malta: {
+        latLng: { lat: 35.93750, lng: 14.37542 },
+        zoom: 6
+    },
+    vanuatu: {
+        latLng: { lat: -15.37671, lng: 166.95916 },
+        zoom: 6
+    },
+    liechtenstein: {
+        latLng: { lat: 47.16600, lng: 9.55537 },
+        zoom: 7
+    },
+    macedonia: {
+        latLng: { lat: 41.60864, lng: 21.74527 },
+        zoom: 5
+    }
 }
 
 var randWord = words[Math.floor(Math.random() * words.length)];
@@ -61,10 +88,12 @@ document.onkeypress = function playerGuess(event) {
             hiddenWord = hiddenWordUpdated;
             if (hiddenWord === randWord) {
                 //change map location to hiddenWord
-                
-                map.panTo(wordsAndLatLng[hiddenWord]); //Make map global;
-                map.setZoom(5);
-                
+
+                map.panTo(wordsAndLatLng[hiddenWord].latLng); //Make map global;
+                map.setZoom(wordsAndLatLng[hiddenWord].zoom);
+                marker.setPosition(wordsAndLatLng[hiddenWord].latLng);
+                marker.setAnimation(google.maps.Animation.DROP);
+
                 var j = words.indexOf(hiddenWord);
                 words.splice(j, 1);
                 console.log(words);
@@ -108,28 +137,31 @@ document.onkeypress = function playerGuess(event) {
 
 }
 
-var myStyles =[
+var myStyles = [
     {
         featureType: "poi",
         elementType: "labels",
         stylers: [
-              { visibility: "off" }
+            { visibility: "off" }
         ]
     }
 ];
 
 var map;
+var marker;
 function initMap() {
     var hccc = { lat: 40.730743, lng: -74.065945 };
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 18,
         center: hccc,
         gestureHandling: 'cooperative',
-        styles: myStyles 
+        styles: myStyles
     });
-    var marker = new google.maps.Marker({
+    marker = new google.maps.Marker({
         position: hccc,
-        map: map
+        map: map,
+        animation: google.maps.Animation.DROP,
+
     });
 }
 
