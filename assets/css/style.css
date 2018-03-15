@@ -3,7 +3,6 @@
 html {
     line-height: 1.4;
     font-size: 100%;
-    color: #222;
     font-weight: 300;
     text-rendering: optimizeLegibility;
     font-kerning: normal;
@@ -16,14 +15,42 @@ body {
     background-color: rgb(57, 71, 71);
   }
 
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 3rem;
+  }
+
+  @media (max-width: 970px) {
+    h1 {
+     font-size: calc(2.1rem + 1.2vw);
+    } 
+   }
+
   main {
-    margin: 4rem;
+    margin: 0.5rem 4rem 4rem 4rem;
     display: grid;
     grid-template-columns: minmax(90px, 1fr) minmax(90px, 1fr) 1fr 1fr 1fr minmax(28%, auto) 1fr 1fr 1fr minmax(90px, 1fr) minmax(90px, 1fr);
     grid-auto-rows: 90px;
     font-family: 'Inconsolata', monospace;
     color: #777777;
 }
+
+@media (max-width: 670px) {
+    h1 {
+        font-size: calc(1.0rem + 1.2vw);
+       } 
+    main {
+        grid-template-columns: minmax(60px, 1fr) minmax(60px, 1fr) 1fr 1fr 1fr minmax(28%, auto) 1fr 1fr 1fr minmax(60px, 1fr) minmax(60px, 1fr);
+        margin: 0.5rem 0rem;
+    }
+    #demo {
+        font-size: 2rem;
+    }
+  }
 
 #map {
     grid-column: 1 / 12;
@@ -40,7 +67,7 @@ body {
     grid-row: 2 / 3;
     z-index: 2;
     font-size: 4rem;
-
+    text-transform: capitalize;
 }
 
 #wrong {
