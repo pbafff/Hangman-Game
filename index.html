@@ -31,9 +31,9 @@
             <p id="remainingGuesses"></p>
         </div>
 
-        <input type="button" id="keyboardBtn" value = "kb" style="background-color: rgba(200, 220, 20, 0.411)">
+        <!-- <input type="button" id="keyboardBtn" value = "kb" style="background-color: rgba(200, 220, 20, 0.411)"> -->
         
-        <input type="textbox" id="hiddenInput" onkeydown="return playerGuess();">
+        <input type="textbox" id="hiddenInput" onkeydown="this.focus({preventScroll:true});">
 
         <div id="map"></div>
 
