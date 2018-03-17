@@ -138,6 +138,7 @@ body {
 }
 
 
+
 @media (max-width: 970px) {
     h1 {
      font-size: calc(2.1rem + 1.2vw);
@@ -176,7 +177,9 @@ body {
         grid-column: 10 / 11;
         grid-row: 8 /9;
         z-index: 3;
-        
-    
+    }
+    #hiddenInput {
+        grid-column: 10 / 11;
+        grid-row: 9 / 10;
     }
   }

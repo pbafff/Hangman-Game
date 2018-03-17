@@ -55,7 +55,7 @@ var lives = 12;
 document.getElementById("remainingGuesses").innerHTML = lives;
 
 document.getElementById("keyboardBtn").addEventListener("touchend", function( event ) {
-    document.getElementById("keyboardBtn").focus();
+    document.getElementById("hiddenInput").focus();
   }, false);
 
 document.onkeyup = function playerGuess(event) {
