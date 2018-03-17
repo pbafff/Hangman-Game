@@ -136,6 +136,9 @@ body {
     grid-row: 2 / 3;
     z-index: 2;
 }
+#keyboardBtn {
+    background-color: rgba(200, 220, 20, 0.411);
+}
 
 @media (max-width: 970px) {
     h1 {
@@ -175,7 +178,7 @@ body {
         grid-column: 10 / 11;
         grid-row: 8 /9;
         z-index: 3;
-        background-color: rgba(200, 220, 20, 0.411)
+        
     
     }
   }
