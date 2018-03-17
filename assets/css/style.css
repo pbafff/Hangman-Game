@@ -165,26 +165,16 @@ body {
         grid-column: 6 / 7;
         grid-row: 7 /8;
     }
-    /* p#wg {
-        grid-column: 2 / auto;
-    }
-    
-    p#wrongGuesses {
-        grid-column: 2 / 3;
-        grid-row: 2 / 3;
-    } */
-    /* p#gr {
-        grid-column: 2 / auto;
-    } */
-    
-    /* p#remainingGuesses {
-        grid-column: 2 / auto;
-        grid-row: 2 / 3;
-    } */
     p#wrong{
         font-size: 2rem;
     }
     p#winner {
         font-size: 2rem;
+    }
+    #keyboardBtn {
+        grid-column: 10 / 11;
+        grid-row: 8 /9;
+        z-index: 3;
+    
     }
   }

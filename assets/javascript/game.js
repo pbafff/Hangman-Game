@@ -54,7 +54,11 @@ var woops = "";
 var lives = 12;
 document.getElementById("remainingGuesses").innerHTML = lives;
 
-document.onkeypress = function playerGuess(event) {
+document.getElementById("keyboardBtn").addEventListener("click", function( event ) {
+    target.focus();
+  }, false);
+
+document.onkeyup = function playerGuess(event) {
     var k = event.key;
     var alphabet = "qwertyuiopasdfghjklzxcvbnm";
     if (alphabet.indexOf(k.toLowerCase()) !== -1) {
