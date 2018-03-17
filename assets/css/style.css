@@ -175,7 +175,7 @@ body {
         grid-column: 10 / 11;
         grid-row: 8 /9;
         z-index: 3;
-        border: solid 1px red;
+        background-color: rgba(200, 220, 20, 0.411)
     
     }
   }
