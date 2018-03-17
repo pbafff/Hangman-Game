@@ -58,7 +58,7 @@ document.getElementById("remainingGuesses").innerHTML = lives;
 //     document.getElementById("hiddenInput").focus();
 //   }, false);
 
-document.onkeyup = function playerGuess(event) {
+document.oninput = function playerGuess(event) {
     var k = event.key;
     var alphabet = "qwertyuiopasdfghjklzxcvbnm";
     if (alphabet.indexOf(k.toLowerCase()) !== -1) {
