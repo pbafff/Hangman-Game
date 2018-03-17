@@ -181,6 +181,5 @@ body {
     #hiddenInput {
         grid-column: 10 / 11;
         grid-row: 9 / 10;
-        z-index: 3;
     }
   }
