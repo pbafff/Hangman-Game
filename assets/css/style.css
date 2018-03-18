@@ -136,7 +136,9 @@ body {
     grid-row: 2 / 3;
     z-index: 2;
 }
-
+#hiddenInput{
+    visibility: hidden;
+}
 
 
 @media (max-width: 970px) {
@@ -186,5 +188,6 @@ body {
         background-color: transparent;
         outline: none;
         border: 0px solid;
+        visibility: visible;
     }
   }
