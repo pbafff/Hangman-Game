@@ -136,8 +136,26 @@ body {
     grid-row: 2 / 3;
     z-index: 2;
 }
-#hiddenInput{
-    visibility: hidden;
+.top-row {
+    grid-area: top;
+}
+.middle-row {
+    grid-area: middle;
+}
+.bottom-row {
+    grid-area: bottom;
+}
+#keyboard {
+    z-index: 3;
+    grid-column: 1 / 12;
+    grid-row: 8 / 10;
+    opacity: 50%;
+    display: grid;
+    grid-template-areas: 
+        "top top top top top top"
+        "middle middle middle middle middle middle"
+        "bottom bottom bottom bottom bottom bottom";
+
 }
 
 
@@ -174,20 +192,5 @@ body {
     }
     p#winner {
         font-size: 2rem;
-    }
-    #keyboardBtn {
-        grid-column: 10 / 11;
-        grid-row: 8 /9;
-        z-index: 3;
-    }
-    #hiddenInput {
-        grid-column: 10 / 11;
-        grid-row: 4 / 5;
-        z-index: 3;
-        color: transparent;
-        background-color: transparent;
-        outline: none;
-        border: 0px solid;
-        visibility: visible;
     }
   }
