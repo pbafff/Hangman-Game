@@ -137,6 +137,7 @@ body {
     z-index: 2;
 }
 .top-row {
+    margin-top: 13px;
     grid-area: top;
 }
 .middle-row {
@@ -146,16 +147,26 @@ body {
     grid-area: bottom;
 }
 #keyboard {
+    text-align: center;
+    font-size: 0;
     z-index: 3;
     grid-column: 1 / 12;
     grid-row: 8 / 10;
     opacity: 50%;
     display: grid;
     grid-template-areas: 
-        "top top top top top top"
-        "middle middle middle middle middle middle"
-        "bottom bottom bottom bottom bottom bottom";
-
+        "top"
+        "middle"
+        "bottom";
+}
+#letter {
+    font-size: 18px;
+    margin: 2px;
+    color: darkslategrey;
+    opacity: 0.7;
+}
+span {
+    display: inline-block;
 }
 
 
