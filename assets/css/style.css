@@ -185,5 +185,6 @@ body {
         color: transparent;
         background-color: transparent;
         outline: none;
+        border: 0px solid;
     }
   }
