@@ -182,5 +182,8 @@ body {
         grid-column: 10 / 11;
         grid-row: 4 / 5;
         z-index: 3;
+        color: transparent;
+        background-color: transparent;
+        outline: none;
     }
   }
