@@ -9,12 +9,13 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Hangman</title>
 </head>
 
-<body>
+<body onkeydown="playerGuess(event)" onload="window.mobileAndTabletCheck()">
     <h1>Countries you never heard of.</h1>
-    <main onkeydown="playerGuess(event)" on-touch="test1()">
+    <main>
 
         <p id="demo"></p>
 
@@ -30,15 +31,50 @@
             <p id="gr">Tries left: </p>
             <p id="remainingGuesses"></p>
         </div>
-
-        <!-- <input type="button" id="keyboardBtn" value = "kb" style="background-color: rgba(200, 220, 20, 0.411)"> -->
         
         <input type="textarea" id="hiddenInput">
+
+        <div id="keyboard" style="display: none">
+            <button id="letter" value="q"><h1>q</h1></button>
+            <button id="letter" value="w"><h1>w</h1></button>
+            <button id="letter" value="e"><h1>e</h1></button>
+            <button id="letter" value="r"><h1>r</h1></button>
+            <button id="letter" value="t"><h1>t</h1></button>
+            <button id="letter" value="y"><h1>y</h1></button>
+            <button id="letter" value="u"><h1>u</h1></button>
+            <button id="letter" value="i"><h1>i</h1></button>
+            <button id="letter" value="o"><h1>o</h1></button>
+            <button id="letter" value="p"><h1>p</h1></button>
+            <button id="letter" value="a"><h1>a</h1></button>
+            <button id="letter" value="s"><h1>s</h1></button>
+            <button id="letter" value="d"><h1>d</h1></button>
+            <button id="letter" value="f"><h1>f</h1></button>
+            <button id="letter" value="g"><h1>g</h1></button>
+            <button id="letter" value="h"><h1>h</h1></button>
+            <button id="letter" value="j"><h1>j</h1></button>
+            <button id="letter" value="k"><h1>k</h1></button>
+            <button id="letter" value="l"><h1>l</h1></button>
+            <button id="letter" value="z"><h1>z</h1></button>
+            <button id="letter" value="x"><h1>x</h1></button>
+            <button id="letter" value="c"><h1>c</h1></button>
+            <button id="letter" value="v"><h1>v</h1></button>
+            <button id="letter" value="b"><h1>b</h1></button>
+            <button id="letter" value="n"><h1>n</h1></button>
+            <button id="letter" value="m"><h1>m</h1></button>
+        </div>
 
         <div id="map"></div>
 
     </main>
 
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#keyboard").on("click", "#letter", function() {
+                keyPressed = $(this).val();
+                bigBoy();
+            })
+        });
+    </script>
 
     <script src="./assets/javascript/game.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdik-Ja5OJBVbLDLgeHUldmCEgIbq1dps&callback=initMap">
