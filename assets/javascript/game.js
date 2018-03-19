@@ -63,6 +63,7 @@ function firstSteps() {
 firstSteps();
 
 var keyPressed;
+var wins = 0;
 
 function bigBoy() {
     if (randWord.indexOf(keyPressed) !== -1) {
@@ -87,6 +88,8 @@ function bigBoy() {
                 var j = words.indexOf(hiddenWord);
                 words.splice(j, 1);
                 console.log(words);
+                wins++
+                document.getElementById("wins").innerHTML = wins;
                 if (words === undefined || words.length == 0) {
                     document.getElementById("winner").innerHTML = "You win!"
                     // words = ["nauru", "kyrgyzstan", "brunei", "kiribati", "djibouti", "malta", "vanuatu", "liechtenstein", "macedonia"];
