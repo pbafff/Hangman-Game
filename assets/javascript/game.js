@@ -64,6 +64,7 @@ firstSteps();
 
 var keyPressed;
 var wins = 0;
+document.getElementById("wins").innerHTML = wins;
 
 function bigBoy() {
     if (randWord.indexOf(keyPressed) !== -1) {
