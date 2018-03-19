@@ -127,6 +127,7 @@ function bigBoy() {
         }
     }
 }
+
 String.prototype.replaceAt = function (index, replacement) {
     return this.substr(0, index) + replacement + this.substr(index + replacement.length);
 }
@@ -213,6 +214,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 }
 
+// uses large regex to check if browser is mobile
 var check;
 function mobileAndTabletCheck() {
     check = false;
