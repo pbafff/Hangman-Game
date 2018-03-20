@@ -38,10 +38,7 @@ var wordsAndLatLng = {
         zoom: 5
     }
 }
-var randWord;
-var hiddenWord;
-var woops;
-var lives;
+var randWord,hiddenWord,woops,lives;
 
 function firstSteps() {
     randWord = words[Math.floor(Math.random() * words.length)];
